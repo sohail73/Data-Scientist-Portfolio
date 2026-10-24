@@ -349,7 +349,7 @@ st.markdown(f"""<div class="hero3"><div class="stage">
 <a class="btn p" href="#work">View my project</a><a class="btn s" href="#contact">Contact me</a></div>
 </div></div>""", unsafe_allow_html=True)
 
-tools = "".join(f"<span>{t} ✦</span>" for t in D["tools"] * 2)
+tools = "".join(f"<span>{t}</span>" for t in D["tools"] * 2)
 st.markdown(f'<div class="marq"><div>{tools}</div></div>', unsafe_allow_html=True)
 
 
@@ -405,10 +405,13 @@ if os.path.exists("resume.pdf"):
         st.download_button("⬇ Download Resume", f, "Resume.pdf", use_container_width=True)
 st.markdown(f'<div class="foot mono"><span>{D["first"]} {D["last"]}.</span><span>Designed &amp; built by me, in Python</span><span>{D["location"]}</span></div>', unsafe_allow_html=True)
 
-import streamlit.components.v1 as components
-components.html(f"""<script>
+try:  # optional extra: sets the tab icon from the page itself (page_icon above already does it)
+    import streamlit.components.v1 as components
+    components.html(f"""<script>
 const d = window.parent.document;
 d.querySelectorAll("link[rel*='icon']").forEach(l => l.remove());
 const l = d.createElement("link"); l.rel = "icon"; l.type = "image/png"; l.href = "data:image/png;base64,{FAVICON}";
 d.head.appendChild(l);
 </script>""", height=0)
+except Exception:
+    pass
