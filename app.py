@@ -300,6 +300,33 @@ button[data-baseweb="tab"]{font-family:'JetBrains Mono';letter-spacing:.1em;text
 .lgL{animation:swL .5s ease-in-out infinite}.lgR{animation:swR .5s ease-in-out infinite}
 @supports (animation-timeline:scroll()){.stage .spider{animation:crawl 28s linear 1.2s infinite,outT linear both;animation-timeline:auto,scroll(nearest block);animation-range:normal,0px 46vh}}
 @media(max-width:800px){.spider{display:none}}
+
+.mcol{display:none}
+@media(max-width:800px){
+ html,body,.stApp,[data-testid=stMain]{overflow-x:hidden!important}
+ .block-container{padding:.5rem 1rem 2rem!important;max-width:100vw!important}
+ .nav{width:94%!important;padding:7px 7px 7px 14px!important;top:10px!important}
+ .nav b{font-size:1rem}.nav .dot{display:none}.nav>div{display:flex;align-items:center}
+ .nav a{padding:6px 8px!important;font-size:.76rem!important;margin:0 1px!important}.nav a.cta{margin-left:4px!important}
+ .hero3{height:auto!important;margin-bottom:0!important}
+ .stage{position:relative!important;height:auto!important;min-height:0!important;display:flex!important;flex-direction:column;align-items:center!important;padding:84px 0 10px!important;overflow:visible!important}
+ .stage .nm,.stage .ph,.stage .top,.stage .sub{animation:none!important;opacity:1!important;visibility:visible!important}
+ .stage .nm{position:static!important;transform:none!important;left:auto!important;right:auto!important;top:auto!important;font-size:17vw!important;text-align:center;z-index:5}
+ .stage .nm.a{order:2;margin-top:-13vw}.stage .nm.b{order:3}
+ .stage .ph{order:1;width:66vw!important;max-width:300px}
+ .stage .top{position:static!important;order:0;margin-bottom:14px;font-size:.58rem!important;letter-spacing:.08em!important}
+ .stage .mcol{display:block;order:4;text-align:center;font-size:.6rem;line-height:1.9;margin-top:14px}
+ .stage .sub{position:static!important;transform:none!important;order:5;width:100%!important;margin-top:14px!important}
+ .stage .sub p{font-size:.95rem}
+ .side{display:none!important}
+ .sec{margin-top:70px}.sec:after{font-size:5rem;top:20px}
+ .fact{flex-direction:column;gap:3px}
+ .panel{padding:18px 14px!important;border-radius:22px}
+ .pbar{flex-direction:column;align-items:flex-start;gap:6px}
+ .pg{grid-template-columns:1fr!important}.feat h3{font-size:1.6rem}
+ .orbit{width:540px!important;max-width:none!important;position:relative;left:50%;margin:0 0 -205px -270px!important;transform:scale(.62);transform-origin:center top}
+ .foot{flex-direction:column;gap:6px;text-align:center}
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -317,6 +344,7 @@ st.markdown(f"""<div class="hero3"><div class="stage">
 <div class="ph">{img}</div>
 <div class="nm b">{D['last'].upper()}</div>
 <div class="side r mono">Based in {D['location']}<br>Scroll to discover ↓</div>
+<div class="mcol mono">{D['role']} · B.Tech CSE (Data Science)<br>Technocrats Institute of Technology, Bhopal</div>
 <div class="sub"><p>{D['tagline']}</p>
 <a class="btn p" href="#work">View my project</a><a class="btn s" href="#contact">Contact me</a></div>
 </div></div>""", unsafe_allow_html=True)
