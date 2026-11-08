@@ -14,17 +14,13 @@ D = {
     "typed": "DATA SCIENCE · STATISTICS · MACHINE LEARNING",
     "stats": [("10", "Regression models compared"), ("3", "Recommender systems built"), ("AWS", "Project deployed end to end"), ("B.Tech", "CSE · Data Science")],
     "about_big": ("Hi, I'm", "Sohail."),
+    "about_lead": "I turn raw data into working machine learning products.",
     "about": [
-        "I am a Data Science student at Technocrats Institute of Technology, Bhopal, and I am looking for a full-time role where I can turn data into decisions.",
-        "I enjoy the whole lifecycle: scraping and cleaning messy data, finding patterns with statistics and exploratory analysis, building machine learning models and shipping them as apps people can actually use.",
-        "My capstone, a real estate price prediction and recommendation platform deployed on AWS, shows how I work: from raw listings to a live product.",
+        "I am a <b>B.Tech Data Science</b> student at Technocrats Institute of Technology, Bhopal, and I am looking for a <b>full-time data science role</b>.",
+        "My strength is <b>end-to-end work</b>: I scrape and clean data, explore it with statistics, build and compare machine learning models, and deploy them as apps. My capstone, a real estate <b>price prediction and recommendation platform on AWS</b>, is the best example.",
+        "I have also built an <b>email spam classifier</b> and a <b>mental health score predictor</b>, and I keep learning through Kaggle, NVIDIA and Anthropic courses.",
     ],
-    "why": [
-        ("I build end to end", "From scraping raw listings to a model deployed on AWS, I own every stage of the pipeline, not just the notebook."),
-        ("I can explain my models", "I used feature selection, permutation importance and SHAP so predictions are interpretable, not a black box."),
-        ("I ship usable products", "My Streamlit app combines price prediction, market analytics and a recommender that anyone can use."),
-    ],
-    "facts": [("Based in", "Bhopal, India"), ("Education", "B.Tech, CSE (Data Science)"), ("College", "Technocrats Institute of Technology, Bhopal"), ("Looking for", "Full-time data science roles"), ("Email", "sohail438216@gmail.com")],
+    "facts": [("Based in", "Bhopal, India"), ("Education", "B.Tech, CSE (Data Science)"), ("College", "Technocrats Institute of Technology, Bhopal"), ("Email", "sohail438216@gmail.com")],
     "project": {
         "tag": "Capstone · Machine Learning & Analytics",
         "name": "Real Estate Analytics & Price Prediction Platform",
@@ -48,13 +44,24 @@ D = {
         "models": ["Linear Regression", "SVR", "Random Forest", "MLP", "LASSO", "Ridge", "Gradient Boosting", "Decision Tree", "KNN", "ElasticNet"],
         "stack": ["Web Scraping", "Data Cleaning", "Feature Engineering", "EDA", "Pandas Profiling", "Feature Selection", "SHAP", "Regression Modeling", "Recommender Systems", "Data Visualization", "Streamlit", "AWS"],
     },
+    "projects": [
+        {"name": "Real Estate Analytics & Price Prediction Platform", "tag": "Capstone · Machine Learning", "desc": "Scraped 99acres listings, engineered features, compared 10 regression models and shipped a Streamlit app with price prediction, analytics and recommendations on AWS.", "stack": ["Web Scraping", "Regression Modeling", "Recommender Systems", "Streamlit", "AWS"], "case": True},
+        {"name": "Email Spam Classifier", "tag": "End-to-end project · Machine Learning", "desc": "An end-to-end machine learning project that classifies emails as spam or not spam.", "stack": ["Python", "Machine Learning"], "github": "", "demo": "", "soon": True},
+        {"name": "Mental Health Score Predictor", "tag": "Machine Learning", "desc": "A machine learning project that predicts a mental health score from input data.", "stack": ["Python", "Machine Learning"], "github": "", "demo": "", "soon": True},
+    ],
+    "certs": [  # (issuer, title, image file name inside the certs/ folder, type)
+        ("Kaggle", "Python", "kaggle-python", "Certificate"),
+        ("Kaggle", "Intro to Machine Learning", "kaggle-ml", "Certificate"),
+        ("NVIDIA", "Fundamentals of Deep Learning", "nvidia-deep-learning", "Certificate"),
+        ("Anthropic", "Claude Code 101", "claude-code-101", "Badge"),
+    ],
     "groups": {
-        "Programming & Databases": ("🐍", "Write code, query and manage data", ["Python", "SQL", "MySQL"]),
-        "Data Analysis": ("🐼", "Clean, transform and analyse data", ["Pandas", "NumPy", "Statistics"]),
-        "Machine Learning": ("🤖", "Build and evaluate predictive models", ["Machine Learning"]),
-        "Data Collection": ("🕸️", "Scrape and collect data from the web", ["Selenium", "Requests", "BeautifulSoup"]),
-        "Data Visualization": ("📊", "Turn data into clear visuals", ["Plotly", "Matplotlib", "Seaborn", "Power BI", "Excel"]),
-        "Apps & Version Control": ("🚀", "Deploy apps and track code", ["Streamlit", "Git", "GitHub"]),
+        "Programming & Databases": ("Write code, query and manage data", ["Python", "SQL", "MySQL"], ""),
+        "Data Analysis": ("Clean, transform and analyse data", ["Pandas", "NumPy", "Statistics"], "Cleaning, EDA, feature engineering and outlier handling in my Real Estate project."),
+        "Machine Learning": ("Build and evaluate predictive models", ["Machine Learning"], "Compared 10 regression models and built a prediction pipeline in my Real Estate project."),
+        "Data Collection": ("Scrape and collect data from the web", ["Selenium", "Requests", "BeautifulSoup"], "Self-scraped the 99acres listings used in my Real Estate project."),
+        "Data Visualization": ("Turn data into clear visuals", ["Plotly", "Matplotlib", "Seaborn", "Power BI", "Excel"], "Built an analytics module with maps, word clouds, scatter, pie and box plots."),
+        "Apps & Version Control": ("Deploy apps and track code", ["Streamlit", "Git", "GitHub"], "Deployed my Real Estate app with Streamlit on AWS."),
     },
     "orbit": [
         (1, "icon", "python", "Python"), (1, "icon", "pandas", "Pandas"), (1, "icon", "numpy", "NumPy"), (1, "text", "ML", "Machine Learning"),
@@ -327,6 +334,47 @@ button[data-baseweb="tab"]{font-family:'JetBrains Mono';letter-spacing:.1em;text
  .orbit{width:540px!important;max-width:none!important;position:relative;left:50%;margin:0 0 -205px -270px!important;transform:scale(.62);transform-origin:center top}
  .foot{flex-direction:column;gap:6px;text-align:center}
 }
+
+.lead2{font-size:clamp(1.3rem,2.3vw,1.8rem);line-height:1.4;color:#F2F2F2;margin:0 0 20px;font-weight:500;letter-spacing:-.015em}
+.ab b{color:#F2F2F2;font-weight:500}
+.open{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:99px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);margin:10px 0 14px;font-size:.92rem}
+.open .dot{background:#4ADE80;margin:0}
+.pcs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.cc{border-radius:20px;border:1px solid rgba(255,255,255,.12);background:#0A0A0A;overflow:hidden;transition:.3s}
+.cc:hover{border-color:rgba(255,255,255,.45);transform:translateY(-5px)}
+.cc .im{aspect-ratio:16/10;background:#101010;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}
+.cc img{width:100%;height:100%;object-fit:cover;display:block}
+.cc .ph2{margin:16px;width:calc(100% - 32px);height:calc(100% - 32px);border:1px dashed rgba(255,255,255,.2);border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;color:#6A6A6A}
+.cc .bd{padding:18px 20px 22px}.cc h4{margin:12px 0 0;font-size:1.25rem;font-weight:500}
+@supports (animation-timeline:scroll()){.cc{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}}
+@media(max-width:800px){.pcs,.cg{grid-template-columns:1fr}}
+
+.cg{grid-template-columns:repeat(4,1fr)!important;gap:14px!important}
+.cc .im{aspect-ratio:4/3!important}
+.cc .bd{padding:14px 16px 18px!important}.cc h4{font-size:1.02rem!important;margin-top:10px!important}
+.cc .chip{font-size:.68rem;padding:3px 9px}.cc .ph2{font-size:.6rem}
+@media(max-width:1000px){.cg{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:800px){.cg{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}.cc h4{font-size:.88rem!important}.cc .bd{padding:10px 12px 14px!important}.cc .chip{font-size:.58rem;padding:2px 7px}}
+.sc{position:relative;padding:22px!important}
+.sc:before{content:'';position:absolute;top:0;left:22px;right:22px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);opacity:0;transition:.3s}
+.sc:hover{box-shadow:0 22px 50px rgba(255,255,255,.06)}.sc:hover:before{opacity:1}
+.sc .sh2{display:flex;justify-content:space-between;color:#7A7A7A;margin-bottom:6px}.sc .sh2 .no{color:#E8E8E8}
+.sc h4{font-size:1.15rem!important;margin:4px 0 6px!important}
+.pf{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(255,255,255,.16);font-size:.8rem;line-height:1.55;color:#9A9A9A}
+.pf b{color:#F2F2F2;font-weight:500;margin-right:4px}
+
+.cc .im.zl{display:block;position:relative;overflow:hidden;background:#111;cursor:zoom-in;aspect-ratio:16/10!important}
+.cc .im.zl img{width:100%;height:100%;object-fit:contain!important;display:block}
+.cc .zc,.cc .bk{display:none}
+.cc .vw{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.6);color:#fff;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;opacity:0;transition:.25s}
+.cc:hover .vw{opacity:1}
+.cc .cl{display:none}
+.cc .zc:checked ~ .bk{display:block;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100000;cursor:zoom-out}
+.cc .zc:checked ~ .im.zl{position:fixed;inset:7vh 6vw;z-index:100001;aspect-ratio:auto!important;border-radius:16px;background:#fff;box-shadow:0 30px 120px #000;cursor:zoom-out}
+.cc .zc:checked ~ .im.zl .vw{display:none}
+.cc .zc:checked ~ .im.zl .cl{display:block;position:absolute;top:12px;right:14px;padding:8px 14px;border-radius:99px;background:#030303;color:#fff;font-size:.72rem}
+.cc:has(.zc:checked){transform:none!important;animation:none!important;overflow:visible!important;position:relative;z-index:100002}
 </style>
 """, unsafe_allow_html=True)
 
@@ -358,20 +406,28 @@ st.markdown('<div id="about" class="sec" data-n="01" style="margin-bottom:0"><di
 ab1, ab2 = st.columns([1.35, 1], gap="large")
 with ab1:
     paras = "".join(f"<p class='ab'>{t}</p>" for t in D["about"])
-    why = "".join(f'<div class="why"><div class="mono no">0{i}</div><div><h4>{t}</h4><p>{d}</p></div></div>' for i, (t, d) in enumerate(D["why"], 1))
-    st.markdown(f'<h2 class="h2">{a} <span class="it">{b}</span></h2>' + paras + '<div class="mono sh" style="margin-top:34px">Why hire me</div>' + why, unsafe_allow_html=True)
+    st.markdown(f'<h2 class="h2">{a} <span class="it">{b}</span></h2><p class="lead2">{D["about_lead"]}</p>{paras}', unsafe_allow_html=True)
 with ab2:
     rows = "".join(f'<div class="fact"><span class="mono">{a_}</span><b>{b_}</b></div>' for a_, b_ in D["facts"])
-    st.markdown(f'<div class="grp" style="padding:10px 26px;margin-top:10px">{rows}</div><a class="btn p" href="{D["github"]}" target="_blank">GitHub</a><a class="btn s" href="{D["linkedin"]}" target="_blank">LinkedIn</a>', unsafe_allow_html=True)
+    st.markdown(f'<div class="open"><span class="dot"></span>Open to full-time data science roles</div><div class="grp" style="padding:10px 26px;margin-top:6px">{rows}</div><a class="btn p" href="{D["github"]}" target="_blank">GitHub</a><a class="btn s" href="{D["linkedin"]}" target="_blank">LinkedIn</a>', unsafe_allow_html=True)
 
+pc = ""
+for i, p in enumerate(D["projects"], 1):
+    chips = "".join(f'<span class="chip">{t}</span>' for t in p["stack"])
+    gh = p.get("github") or (D["project"]["github"] if p.get("case") else "")
+    dm = p.get("demo") or (D["project"]["demo"] if p.get("case") else "")
+    links = (f'<a href="{gh}" target="_blank">GitHub ↗</a>' if gh else "") + (f'<a href="{dm}" target="_blank">Live demo ↗</a>' if dm else "") + ('<a href="#casestudy">Read the case study ↓</a>' if p.get("case") else "")
+    soon = '<div class="mono" style="margin-top:10px;color:#7A7A7A">Details &amp; links coming soon</div>' if p.get("soon") else ""
+    pc += f'<div class="card"><div class="n mono">0{i} / {p["tag"]}</div><h3>{p["name"]}</h3><p>{p["desc"]}</p>{chips}<div style="margin-top:14px">{links}</div>{soon}</div>'
+st.markdown(f'<div id="work" class="sec" data-n="02"><div class="mono">02 / Projects</div><h2>Selected <span class="it">projects.</span></h2></div><br><div class="pcs">{pc}</div>', unsafe_allow_html=True)
 P = D["project"]
 steps = "".join(f'<div class="step"><div class="mono no">0{i}</div><h4>{t}</h4><p>{d}</p></div>' for i, (t, d) in enumerate(P["steps"], 1))
 mods = "".join(f'<div class="mod"><h4>{t}</h4><p>{d}</p></div>' for t, d in P["modules"])
 models = "".join(f'<span class="chip">{m}</span>' for m in P["models"])
 stack = "".join(f'<span class="chip">{m}</span>' for m in P["stack"])
 btns = (f'<a class="btn p" href="{P["github"]}" target="_blank">View on GitHub</a>' if P["github"] else "") + (f'<a class="btn s" href="{P["demo"]}" target="_blank">Live demo</a>' if P["demo"] else "")
-st.markdown(f'''<div id="work" class="sec" data-n="02"><div class="mono">02 / Featured project</div><h2>End to end <span class="it">project.</span></h2></div><br>
-<div class="panel"><div class="pbar"><span class="mono">● Project starts</span><span class="mono">{P["tag"]}</span></div>
+st.markdown(f'''<div class="mono sh" style="margin-top:44px">Featured case study</div>
+<div class="panel" id="casestudy"><div class="pbar"><span class="mono">● Project starts</span><span class="mono">{P["tag"]}</span></div>
 <div class="feat"><h3>{P["name"]}</h3><p class="lead">{P["summary"]}</p><div>{btns}</div></div>
 <div class="mono sh">The pipeline</div><div class="pg">{steps}</div>
 <div class="mono sh">What the app does</div><div class="mods">{mods}</div>
@@ -394,16 +450,41 @@ with sk1:
         html += '</div>'
     st.markdown(html + '</div>', unsafe_allow_html=True)
 with sk2:
-    cards = "".join(f'<div class="sc"><h4>{g}</h4><p>{d}</p>' + "".join(f'<span class="chip">{t}</span>' for t in ts) + '</div>' for g, (e, d, ts) in D["groups"].items())
+    cards = "".join(
+        f'<div class="sc"><div class="sh2"><span class="mono no">0{i}</span><span class="mono">{len(ts)} tool{"s" if len(ts) > 1 else ""}</span></div><h4>{g}</h4><p>{d}</p>'
+        + "".join(f'<span class="chip">{t}</span>' for t in ts)
+        + (f'<div class="pf"><b>In practice</b> {pf}</div>' if pf else "") + '</div>'
+        for i, (g, (d, ts, pf)) in enumerate(D["groups"].items(), 1))
     st.markdown(f'<div class="sg">{cards}</div>', unsafe_allow_html=True)
 
-st.markdown(f"""<div id="contact" class="big"><div class="mono">04 / Contact</div>
+@st.cache_data(show_spinner=False)
+def cert_img(slug):
+    for ext in ("png", "jpg", "jpeg", "webp"):
+        p = f"certs/{slug}.{ext}"
+        if os.path.exists(p):
+            im = Image.open(p).convert("RGB"); im.thumbnail((1600, 1600))
+            buf = io.BytesIO(); im.save(buf, "JPEG", quality=80)
+            return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+    return None
+
+cc = ""
+for i, (issuer, title, slug, kind) in enumerate(D["certs"], 1):
+    u = cert_img(slug)
+    if u:
+        im = (f'<input type="checkbox" id="z{i}" class="zc"><label for="z{i}" class="bk"></label>'
+              f'<label for="z{i}" class="im zl"><img src="{u}" alt="{title}"><span class="vw">View certificate</span><span class="cl mono">✕ Close</span></label>')
+    else:
+        im = '<div class="im"><div class="ph2 mono">Certificate image coming soon</div></div>'
+    cc += f'<div class="cc">{im}<div class="bd"><span class="chip">{issuer}</span><span class="chip">{kind}</span><h4>{title}</h4></div></div>'
+st.markdown(f'<div id="certs" class="sec" data-n="04"><div class="mono">04 / Certifications</div><h2>Certifications <span class="it">&amp; badges.</span></h2></div><br><div class="cg">{cc}</div>', unsafe_allow_html=True)
+
+st.markdown(f"""<div id="contact" class="big"><div class="mono">05 / Contact</div>
 <h2>Something great<br>starts with <span class="it">a hello.</span></h2>
 <a class="btn p" href="mailto:{D['email']}">Let's connect</a><a class="btn s" href="{D['linkedin']}" target="_blank">LinkedIn</a><a class="btn s" href="{D['github']}" target="_blank">GitHub</a></div>""", unsafe_allow_html=True)
 if os.path.exists("resume.pdf"):
     with open("resume.pdf", "rb") as f:
         st.download_button("⬇ Download Resume", f, "Resume.pdf", use_container_width=True)
-st.markdown(f'<div class="foot mono"><span>{D["first"]} {D["last"]}.</span><span>Designed &amp; built by me, in Python</span><span>{D["location"]}</span></div>', unsafe_allow_html=True)
+st.markdown(f'<div class="foot mono"><span>© 2026 {D["first"]} {D["last"]}</span><span>Designed, coded &amp; deployed by me, from scratch</span><span>{D["location"]}</span></div>', unsafe_allow_html=True)
 
 try:  # optional extra: sets the tab icon from the page itself (page_icon above already does it)
     import streamlit.components.v1 as components
