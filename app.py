@@ -46,7 +46,7 @@ D = {
     },
     "projects": [
         {"name": "Real Estate Analytics & Price Prediction Platform", "tag": "Capstone · Machine Learning", "desc": "Scraped 99acres listings, engineered features, compared 10 regression models and shipped a Streamlit app with price prediction, analytics and recommendations on AWS.", "stack": ["Web Scraping", "Regression Modeling", "Recommender Systems", "Streamlit", "AWS"], "case": True},
-        {"name": "Email Spam Classifier", "tag": "End-to-end project · Machine Learning", "desc": "An end-to-end machine learning project that classifies emails as spam or not spam.", "stack": ["Python", "Machine Learning"], "github": "", "demo": "", "soon": True},
+        {"name": "Email Spam Classifier", "tag": "End-to-end project · Machine Learning", "desc": "A machine learning model that detects spam emails, built end to end and deployed as a live web app with Streamlit.", "stack": ["Python", "Machine Learning", "Streamlit"], "github": "https://github.com/sohail73/Email-Spam-Classifier", "demo": "https://email-spam-classifier-webapp.streamlit.app/"},
         {"name": "Mental Health Score Predictor", "tag": "Machine Learning", "desc": "A machine learning project that predicts a mental health score from input data.", "stack": ["Python", "Machine Learning"], "github": "", "demo": "", "soon": True},
     ],
     "certs": [  # (issuer, title, image file name inside the certs/ folder, type)
@@ -375,6 +375,12 @@ button[data-baseweb="tab"]{font-family:'JetBrains Mono';letter-spacing:.1em;text
 .cc .zc:checked ~ .im.zl .vw{display:none}
 .cc .zc:checked ~ .im.zl .cl{display:block;position:absolute;top:12px;right:14px;padding:8px 14px;border-radius:99px;background:#030303;color:#fff;font-size:.72rem}
 .cc:has(.zc:checked){transform:none!important;animation:none!important;overflow:visible!important;position:relative;z-index:100002}
+
+.card .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.card .links a{display:inline-flex;align-items:center;gap:6px;margin:0;padding:10px 18px;border-radius:99px;border:1px solid rgba(255,255,255,.3);color:#F2F2F2;background:rgba(255,255,255,.04);font-weight:600;font-size:.84rem;text-decoration:none;transition:.25s}
+.card .links a:hover{background:rgba(255,255,255,.14);border-color:#fff;transform:translateY(-2px)}
+.card .links a.lv{background:#F2F2F2;color:#030303;border-color:#F2F2F2}
+.card .links a.lv:hover{background:#fff;box-shadow:0 8px 28px rgba(255,255,255,.3)}
 </style>
 """, unsafe_allow_html=True)
 
@@ -416,9 +422,9 @@ for i, p in enumerate(D["projects"], 1):
     chips = "".join(f'<span class="chip">{t}</span>' for t in p["stack"])
     gh = p.get("github") or (D["project"]["github"] if p.get("case") else "")
     dm = p.get("demo") or (D["project"]["demo"] if p.get("case") else "")
-    links = (f'<a href="{gh}" target="_blank">GitHub ↗</a>' if gh else "") + (f'<a href="{dm}" target="_blank">Live demo ↗</a>' if dm else "") + ('<a href="#casestudy">Read the case study ↓</a>' if p.get("case") else "")
+    links = (f'<a class="gh" href="{gh}" target="_blank">GitHub ↗</a>' if gh else "") + (f'<a class="lv" href="{dm}" target="_blank">Live demo ↗</a>' if dm else "") + ('<a class="cs" href="#casestudy">Read the case study ↓</a>' if p.get("case") else "")
     soon = '<div class="mono" style="margin-top:10px;color:#7A7A7A">Details &amp; links coming soon</div>' if p.get("soon") else ""
-    pc += f'<div class="card"><div class="n mono">0{i} / {p["tag"]}</div><h3>{p["name"]}</h3><p>{p["desc"]}</p>{chips}<div style="margin-top:14px">{links}</div>{soon}</div>'
+    pc += f'<div class="card"><div class="n mono">0{i} / {p["tag"]}</div><h3>{p["name"]}</h3><p>{p["desc"]}</p>{chips}<div class="links">{links}</div>{soon}</div>'
 st.markdown(f'<div id="work" class="sec" data-n="02"><div class="mono">02 / Projects</div><h2>Selected <span class="it">projects.</span></h2></div><br><div class="pcs">{pc}</div>', unsafe_allow_html=True)
 P = D["project"]
 steps = "".join(f'<div class="step"><div class="mono no">0{i}</div><h4>{t}</h4><p>{d}</p></div>' for i, (t, d) in enumerate(P["steps"], 1))
