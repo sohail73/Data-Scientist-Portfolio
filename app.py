@@ -58,19 +58,18 @@ D = {
     "groups": {
         "Programming & Databases": ("Write code, query and manage data", ["Python", "SQL", "MySQL"], ""),
         "Data Analysis": ("Clean, transform and analyse data", ["Pandas", "NumPy", "Statistics"], "Cleaning, EDA, feature engineering and outlier handling in my Real Estate project."),
-        "Machine Learning": ("Build and evaluate predictive models", ["Machine Learning"], "Compared 10 regression models and built a prediction pipeline in my Real Estate project."),
-        "Data Collection": ("Scrape and collect data from the web", ["Selenium", "Requests", "BeautifulSoup"], "Self-scraped the 99acres listings used in my Real Estate project."),
+        "ML & Deep Learning": ("Build and evaluate predictive models", ["Machine Learning", "Deep Learning"], "Compared 10 regression models in my Real Estate project. Completed NVIDIA's Fundamentals of Deep Learning."),
+        "Data Collection": ("Collect data from the web", ["Web Scraping"], "Self-scraped the 99acres listings used in my Real Estate project."),
         "Data Visualization": ("Turn data into clear visuals", ["Plotly", "Matplotlib", "Seaborn", "Power BI", "Excel"], "Built an analytics module with maps, word clouds, scatter, pie and box plots."),
         "Apps & Version Control": ("Deploy apps and track code", ["Streamlit", "Git", "GitHub"], "Deployed my Real Estate app with Streamlit on AWS."),
     },
     "orbit": [
-        (1, "icon", "python", "Python"), (1, "icon", "pandas", "Pandas"), (1, "icon", "numpy", "NumPy"), (1, "text", "ML", "Machine Learning"),
+        (1, "icon", "python", "Python"), (1, "icon", "pandas", "Pandas"), (1, "icon", "numpy", "NumPy"), (1, "text", "ML", "Machine Learning"), (1, "text", "DL", "Deep Learning"),
         (2, "text", "σ", "Statistics"), (2, "text", "SQL", "SQL"), (2, "icon", "mysql", "MySQL"),
         (2, "icon", "matplotlib", "Matplotlib"), (2, "text", "Sns", "Seaborn"), (2, "icon", "plotly", "Plotly"),
-        (3, "icon", "selenium", "Selenium"), (3, "text", "BS4", "BeautifulSoup"), (3, "text", "Req", "Requests"),
-        (3, "icon", "streamlit", "Streamlit"), (3, "icon", "git", "Git"), (3, "icon", "github", "GitHub"),
+        (3, "text", "Web", "Web Scraping"), (3, "icon", "streamlit", "Streamlit"), (3, "icon", "git", "Git"), (3, "icon", "github", "GitHub"),
     ],
-    "tools": ["Python", "NumPy", "Pandas", "SQL", "MySQL", "Statistics", "Machine Learning", "Selenium", "Requests", "BeautifulSoup", "Matplotlib", "Seaborn", "Plotly", "Streamlit", "Power BI", "Excel", "Git", "GitHub"],
+    "tools": ["Python", "NumPy", "Pandas", "SQL", "MySQL", "Statistics", "Machine Learning", "Deep Learning", "Web Scraping", "Matplotlib", "Seaborn", "Plotly", "Streamlit", "Power BI", "Excel", "Git", "GitHub"],
 }
 # ==================================================
 
@@ -381,6 +380,18 @@ button[data-baseweb="tab"]{font-family:'JetBrains Mono';letter-spacing:.1em;text
 .card .links a:hover{background:rgba(255,255,255,.14);border-color:#fff;transform:translateY(-2px)}
 .card .links a.lv{background:#F2F2F2;color:#030303;border-color:#F2F2F2}
 .card .links a.lv:hover{background:#fff;box-shadow:0 8px 28px rgba(255,255,255,.3)}
+
+.sl{border-top:1px solid rgba(255,255,255,.16)}
+.sr{position:relative;padding:22px 8px;border-bottom:1px solid rgba(255,255,255,.16);transition:.3s}
+.sr:hover{background:linear-gradient(90deg,rgba(255,255,255,.07),transparent);padding-left:20px}
+.sr .hd{display:flex;align-items:baseline;gap:16px}
+.sr .no{color:#7A7A7A}.sr h4{margin:0;font-size:1.3rem;font-weight:500;letter-spacing:-.01em}
+.sr .ds{margin-left:auto;color:#6A6A6A;font-size:.62rem;text-align:right}
+.sr .tls{margin:10px 0 0 34px;font-size:1.08rem;color:#F2F2F2;line-height:1.7}
+.sr .tls i{font-style:normal;color:#555;margin:0 11px}
+.sr .pf2{margin:8px 0 0 34px;font-size:.82rem;color:#8A8A8A;line-height:1.55}
+@supports (animation-timeline:scroll()){.sr{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}}
+@media(max-width:800px){.sr .ds{display:none}.sr .tls,.sr .pf2{margin-left:0}.sr h4{font-size:1.15rem}}
 </style>
 """, unsafe_allow_html=True)
 
@@ -456,12 +467,12 @@ with sk1:
         html += '</div>'
     st.markdown(html + '</div>', unsafe_allow_html=True)
 with sk2:
-    cards = "".join(
-        f'<div class="sc"><div class="sh2"><span class="mono no">0{i}</span><span class="mono">{len(ts)} tool{"s" if len(ts) > 1 else ""}</span></div><h4>{g}</h4><p>{d}</p>'
-        + "".join(f'<span class="chip">{t}</span>' for t in ts)
-        + (f'<div class="pf"><b>In practice</b> {pf}</div>' if pf else "") + '</div>'
-        for i, (g, (d, ts, pf)) in enumerate(D["groups"].items(), 1))
-    st.markdown(f'<div class="sg">{cards}</div>', unsafe_allow_html=True)
+    rows = ""
+    for i, (g, (d, ts, pf)) in enumerate(D["groups"].items(), 1):
+        tl = '<i>/</i>'.join(ts)
+        rows += (f'<div class="sr"><div class="hd"><span class="mono no">0{i}</span><h4>{g}</h4><span class="mono ds">{d}</span></div>'
+                 f'<div class="tls">{tl}</div>' + (f'<div class="pf2">↳ {pf}</div>' if pf else "") + '</div>')
+    st.markdown(f'<div class="sl">{rows}</div>', unsafe_allow_html=True)
 
 @st.cache_data(show_spinner=False)
 def cert_img(slug):
